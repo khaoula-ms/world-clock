@@ -30,6 +30,20 @@ setInterval(() => {
       .format("A")}</small>`;
   }
 }, 1000);
+setInterval(() => {
+  let seoul = document.querySelector("#seoul");
+  if (seoul) {
+    let seoulDate = seoul.querySelector(".date");
+    let seoulTime = seoul.querySelector(".time");
+
+    seoulDate.innerHTML = moment().tz("Asia/Seoul").format("MMMM Do, YYYY");
+    seoulTime.innerHTML = `${moment()
+      .tz("Asia/Seoul")
+      .format("h:mm:ss")} <small>${moment()
+      .tz("Asia/Seoul")
+      .format("A")}</small>`;
+  }
+}, 1000);
 function updateCity(event) {
   let cityTime = event.target.value;
   if (cityTime === "current") {
